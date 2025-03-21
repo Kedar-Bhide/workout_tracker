@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="fas fa-plus-circle me-2"></i>Add Workout</h5>
+            </div>
+            <div class="card-body">
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="date" name="date" value="{{ today }}" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="workout_type" class="form-label">Workout Type</label>
+                        <select class="form-select" id="workout_type" name="workout_type" required>
+                            <option value="">Select a workout type</option>
+                            <option value="Strength Training">Strength Training</option>
+                            <option value="Cardio">Cardio</option>
+                            <option value="HIIT">HIIT</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Pilates">Pilates</option>
+                            <option value="Running">Running</option>
+                            <option value="Cycling">Cycling</option>
+                            <option value="Swimming">Swimming</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="duration" class="form-label">Duration (minutes)</label>
+                        <input type="number" class="form-control" id="duration" name="duration" min="1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="notes" class="form-label">Notes (optional)</label>
+                        <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Save Workout</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
